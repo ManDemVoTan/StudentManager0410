@@ -1,6 +1,7 @@
 package edu.zera.student.manager.config;
 
 
+import edu.zera.student.manager.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -53,7 +54,8 @@ public class HibernateConfig {
         factoryBean.setHibernateProperties(props);
 
         //Mapping
-        factoryBean.setPackagesToScan(" edu.zera.student.manager.model");
+//        factoryBean.setPackagesToScan(" edu.zera.student.manager.model");
+        factoryBean.setAnnotatedClasses(User.class);
         return factoryBean;
     }
     @Bean
